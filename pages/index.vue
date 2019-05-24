@@ -1,72 +1,70 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        apps-for-tesla
-      </h1>
-      <h2 class="subtitle">
-        Unofficial app store for Tesla vehicles
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
-    </div>
-  </section>
+  <main class="flex flex-row min-h-screen" style="background: #EEEEEE;">
+    <aside class="max-w-xs w-1/5">
+      <section>
+        <navigation
+          :categories="categories"
+          :selected-category="selectedCategory"
+          @selectCategory="category => (selectedCategory = category)"
+        ></navigation>
+      </section>
+    </aside>
+    <section class="flex-1 pt-8 px-16 max-h-screen flex flex-col">
+      <header class="mb-16">
+        <search-box
+          class="max-w-xs"
+          @input="value => (query = value)"
+        ></search-box>
+      </header>
+      <results :apps="filteredApps"></results>
+    </section>
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Navigation from '../components/navigation'
+import SearchBox from '../components/searchBox'
+import Results from '../components/results'
+import { AppsService } from '../services/appsService'
+import { CategoriesService } from '../services/categoriesService'
 
 export default {
   components: {
-    Logo
+    Navigation,
+    SearchBox,
+    Results
+  },
+  data: () => ({
+    categories: [],
+    selectedCategory: 'Featured Applications',
+    apps: [],
+    query: ''
+  }),
+  computed: {
+    filteredApps: function() {
+      return this.apps.filter(app => {
+        if (this.selectedCategory !== 'Featured Applications') {
+          if (app.category !== this.selectedCategory) return false
+        }
+        if (this.query) {
+          // eslint-disable-next-line no-console
+          console.log(
+            app.title.toLowerCase().indexOf(this.query.trim().toLowerCase())
+          )
+          return (
+            app.title.toLowerCase().indexOf(this.query.trim().toLowerCase()) !==
+            -1
+          )
+        }
+        return true
+      })
+    }
+  },
+  beforeMount() {
+    this.apps = AppsService.fetchApps()
+    this.categories = CategoriesService.fetchCategories(this.apps)
   }
 }
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style></style>

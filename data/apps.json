@@ -1,0 +1,18 @@
+[
+  {
+    "title": "A Better Route Planner",
+    "image": "https://abetterrouteplanner.com/icon/abrp_icon.png",
+    "href": "https://abetterrouteplanner.com/",
+    "category": "Navigation"
+  },
+  {
+    "title": "TesPlayer - Spotify Remote",
+    "href": "https://tesplayer.com",
+    "category": "Entertainment"
+  },
+  {
+    "title": "Tesla Waze",
+    "href": "https://TeslaWaze.azurewebsites.net",
+    "category": "Navigation"
+  }
+]

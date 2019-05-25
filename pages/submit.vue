@@ -19,7 +19,12 @@
     </header>
     <section class="flex flex-col justify-start items-center flex-1">
       <article class="flex flex-col justify-center  w-1/2 py-8 px-6">
-        <form method="POST" netlify name="suggest-app" action="/submit-success">
+        <form
+          method="POST"
+          netlify
+          name="suggest-app"
+          action="/submit-success/"
+        >
           <div class="mb-12">
             <label
               for="name"

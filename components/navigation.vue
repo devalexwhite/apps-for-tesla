@@ -4,12 +4,9 @@
     style="background-color: #FAFAFA;"
   >
     <ul class="list-reset">
-      <li
-        class="nav-item"
-        :active="'Featured Applications' === selectedCategory"
-      >
-        <button @click="$emit('selectCategory', 'Featured Applications')">
-          Featured Applications
+      <li class="nav-item" :active="'All Applications' === selectedCategory">
+        <button @click="$emit('selectCategory', 'All Applications')">
+          All Applications
         </button>
       </li>
       <li
@@ -29,9 +26,7 @@
     ></div>
     <ul class="list-reset">
       <li class="nav-item"><nuxt-link to="/">Submit App</nuxt-link></li>
-      <li class="nav-item">
-        <a href="https://twitter.com/AlexWhiteDev">Feedback</a>
-      </li>
+      <li class="nav-item"><nuxt-link to="/feedback">Feedback</nuxt-link></li>
     </ul>
   </nav>
 </template>
@@ -65,6 +60,6 @@ li.nav-item > a {
 }
 li.nav-item[active='true'] > button,
 li.nav-item[active='true'] > a {
-  @apply text-black text-left;
+  @apply text-black text-left leading-normal;
 }
 </style>

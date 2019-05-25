@@ -39,14 +39,14 @@ export default {
   },
   data: () => ({
     categories: [],
-    selectedCategory: 'Featured Applications',
+    selectedCategory: 'All Applications',
     apps: [],
     query: ''
   }),
   computed: {
     filteredApps: function() {
       return this.apps.filter(app => {
-        if (this.selectedCategory !== 'Featured Applications') {
+        if (this.selectedCategory !== 'All Applications') {
           if (app.category !== this.selectedCategory) return false
         }
         if (this.query) {

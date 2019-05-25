@@ -36,8 +36,9 @@
             </label>
             <input
               id="name"
-              v-model="name"
+              v-model="form.name"
               type="text"
+              required
               name="name"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
               style="color: #555555;"
@@ -54,8 +55,9 @@
             </label>
             <input
               id="href"
-              v-model="href"
-              type="text"
+              v-model="form.href"
+              type="url"
+              required
               name="href"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
               style="color: #555555;"
@@ -72,9 +74,10 @@
             </label>
             <input
               id="category"
-              v-model="category"
+              v-model="form.category"
               type="text"
               name="category"
+              required
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
               style="color: #555555;"
               placeholder="Navigation"
@@ -90,8 +93,8 @@
             </label>
             <input
               id="image"
-              v-model="image"
-              type="text"
+              v-model="form.image"
+              type="url"
               name="image"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
               style="color: #555555;"

@@ -17,5 +17,19 @@
     "href": "https://TeslaWaze.azurewebsites.net",
     "category": "Navigation",
     "allowIFrame": true
+  },
+  {
+    "title": "Tesla Weather Radar",
+    "image": "/app-logos/tesla-weather-radar.png",
+    "href": "https://www.teslaweatherradar.com/",
+    "category": "Weather",
+    "allowIFrame": "true"
+  },
+  {
+    "title": "Eve For Tesla",
+    "image": "/app-logos/eve-for-tesla.png",
+    "href": "https://teslaapps.net/en/",
+    "category": "Productivity",
+    "allowIFrame": "true"
   }
 ]

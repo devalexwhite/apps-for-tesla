@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        <h3 class="text-black font-semibold text-lg font-normal">
+        <h3 class="text-black font-semibold text-lg font-normal leading-normal">
           {{ app.title }}
         </h3>
       </div>
@@ -49,6 +49,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 200px);
   grid-column-gap: 40px;
+  grid-template-rows: max-content;
   grid-row-gap: 60px;
 }
 </style>

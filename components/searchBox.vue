@@ -1,6 +1,7 @@
 <template>
   <div
-    class="flex flex-row rounded-full shadow-md bg-white px-8 py-4 w-full items-center"
+    class="flex flex-row rounded-lg shadow-md bg-white px-8 py-4 w-full items-center"
+    style="background: rgba(255,255,255,0.5);"
   >
     <svg
       aria-hidden="true"
@@ -11,7 +12,7 @@
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      style="color: #B8B8B8;width: 20px;height: 20px;"
+      style="color: #555;width: 20px;height: 20px;"
     >
       <path
         fill="currentColor"
@@ -21,7 +22,7 @@
     <input
       class="font-semibold text-lg"
       placeholder="Search"
-      style="color: #555555;"
+      style="color: #555555;background: rgba(255,255,255,0);"
       @input="event => $emit('input', event.target.value)"
     />
   </div>

@@ -25,7 +25,7 @@
     </ul>
     <div
       class="mx-10 rounded-lg mb-4"
-      style="height: 3px;background: #B8B8B8;"
+      style="height: 2px;background: #B8B8B8;"
     ></div>
     <ul class="list-reset">
       <li class="nav-item"><nuxt-link to="/">Submit App</nuxt-link></li>
@@ -65,6 +65,6 @@ li.nav-item > a {
 }
 li.nav-item[active='true'] > button,
 li.nav-item[active='true'] > a {
-  color: #555555;
+  @apply text-black text-left;
 }
 </style>

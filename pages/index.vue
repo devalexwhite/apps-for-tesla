@@ -10,12 +10,15 @@
       </section>
     </aside>
     <section class="flex-1 pt-8 px-16 max-h-screen flex flex-col">
-      <header class="mb-16">
+      <header class="mb-8">
         <search-box
           class="max-w-xs"
           @input="value => (query = value)"
         ></search-box>
       </header>
+      <h3 style="color: #555;" class="text-xl font-semibold mb-8">
+        {{ selectedCategory }}
+      </h3>
       <results :apps="filteredApps"></results>
     </section>
   </main>

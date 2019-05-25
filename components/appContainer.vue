@@ -6,10 +6,10 @@
     role="dialog"
   >
     <section class="w-full h-full flex flex-col">
-      <header class="w-full px-8 py-4 flex flex-row justify-center">
+      <header class="w-full px-8 py-6 flex flex-row justify-center">
         <div
           class="mx-10 rounded-lg w-32 cursor-pointer"
-          style="height: 6px;background: #B8B8B8;"
+          style="height: 8px;background: #B8B8B8;"
           @click="$emit('close')"
         ></div>
       </header>

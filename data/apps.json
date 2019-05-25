@@ -16,6 +16,6 @@
     "title": "Tesla Waze",
     "href": "https://TeslaWaze.azurewebsites.net",
     "category": "Navigation",
-    "allowIFrame": false
+    "allowIFrame": true
   }
 ]

@@ -24,6 +24,7 @@
           netlify
           name="suggest-app"
           action="/submit-success/"
+          @submit.prevent="handleSubmit"
         >
           <div class="mb-12">
             <label
@@ -35,6 +36,7 @@
             </label>
             <input
               id="name"
+              v-model="name"
               type="text"
               name="name"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
@@ -52,6 +54,7 @@
             </label>
             <input
               id="href"
+              v-model="href"
               type="text"
               name="href"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
@@ -69,6 +72,7 @@
             </label>
             <input
               id="category"
+              v-model="category"
               type="text"
               name="category"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
@@ -86,6 +90,7 @@
             </label>
             <input
               id="image"
+              v-model="image"
               type="text"
               name="image"
               class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center font-semibold text-lg"
@@ -104,3 +109,41 @@
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    form: {
+      name: '',
+      href: '',
+      image: '',
+      category: ''
+    }
+  }),
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
+    },
+    handleSubmit: function() {
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      this.$axios.post(
+        '/',
+        this.encode({
+          'form-name': 'suggest-app',
+          ...this.form
+        }),
+        axiosConfig
+      )
+      this.$router.push({
+        path: '/submit-success'
+      })
+    }
+  }
+}
+</script>

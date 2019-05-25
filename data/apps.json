@@ -3,51 +3,19 @@
     "title": "A Better Route Planner",
     "image": "https://abetterrouteplanner.com/icon/abrp_icon.png",
     "href": "https://abetterrouteplanner.com/",
-    "category": "Navigation"
+    "category": "Navigation",
+    "allowIFrame": true
   },
   {
     "title": "TesPlayer - Spotify Remote",
     "href": "https://tesplayer.com",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "allowIFrame": false
   },
   {
     "title": "Tesla Waze",
     "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
-  },
-  {
-    "title": "Tesla Waze",
-    "href": "https://TeslaWaze.azurewebsites.net",
-    "category": "Navigation"
+    "category": "Navigation",
+    "allowIFrame": false
   }
 ]

@@ -1,7 +1,7 @@
 <template>
   <ul class="list-reset grid overflow-x-hidden overflow-y-auto h-full">
     <li v-for="app in apps" :key="app.title">
-      <a :href="app.href" class="no-underline cursor-pointer">
+      <div class="cursor-pointer" @click="$emit('selected', app)">
         <div
           class="shadow-lg mb-6 flex justify-center items-center text-center font-bold tracking-wide overflow-hidden"
           style="width: 200px; height: 200px; font-size: 80px; color: #555555;background-color: #8EC5FC;background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);"
@@ -19,7 +19,7 @@
         <h3 class="text-black font-semibold text-lg font-normal">
           {{ app.title }}
         </h3>
-      </a>
+      </div>
     </li>
   </ul>
 </template>

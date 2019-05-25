@@ -131,11 +131,11 @@ export default {
         )
         .join('&')
     },
-    handleSubmit: function() {
+    handleSubmit: async function() {
       const axiosConfig = {
         header: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }
-      this.$axios.post(
+      await this.$axios.post(
         '/',
         this.encode({
           'form-name': 'suggest-app',

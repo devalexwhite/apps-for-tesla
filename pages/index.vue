@@ -18,7 +18,7 @@
       <section class="flex-1 pt-8 px-16 max-h-screen flex flex-col">
         <header class="mb-8">
           <search-box
-            class="max-w-xs"
+            class="max-w-sm"
             @input="value => (query = value)"
           ></search-box>
         </header>

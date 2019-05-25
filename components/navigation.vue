@@ -25,7 +25,7 @@
       style="height: 2px;background: #B8B8B8;"
     ></div>
     <ul class="list-reset">
-      <li class="nav-item"><nuxt-link to="/">Submit App</nuxt-link></li>
+      <li class="nav-item"><nuxt-link to="/submit">Submit App</nuxt-link></li>
       <li class="nav-item"><nuxt-link to="/feedback">Feedback</nuxt-link></li>
     </ul>
   </nav>

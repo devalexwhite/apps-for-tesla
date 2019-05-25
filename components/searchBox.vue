@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row rounded-lg shadow-md bg-white px-6 py-4 w-full items-center"
+    class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center"
     style="background: rgba(255,255,255,0.5);"
   >
     <svg

@@ -1,8 +1,5 @@
 <template>
-  <nav
-    class="h-screen w-full shadow-md py-8"
-    style="background-color: #FAFAFA;"
-  >
+  <nav class="h-screen w-full py-8" style="background-color: #FAFAFA;">
     <ul class="list-reset">
       <li class="nav-item" :active="'All Applications' === selectedCategory">
         <button @click="$emit('selectCategory', 'All Applications')">
@@ -28,6 +25,17 @@
       <li class="nav-item"><nuxt-link to="/submit">Submit App</nuxt-link></li>
       <li class="nav-item"><nuxt-link to="/feedback">Feedback</nuxt-link></li>
     </ul>
+    <div
+      class="mx-10 rounded-lg mb-4"
+      style="height: 2px;background: #B8B8B8;"
+    ></div>
+    <ul class="list-reset">
+      <li class="nav-item">
+        <nuxt-link to="/support">
+          Support the Developer
+        </nuxt-link>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -51,7 +59,7 @@ li.nav-item {
   @apply text-lg py-4 px-10 overflow-hidden mb-4;
 }
 li.nav-item[active='true'] {
-  background-color: #f4f4f4;
+  background-color: #eee;
 }
 li.nav-item > button,
 li.nav-item > a {

@@ -24,7 +24,7 @@
         <div class="max-w-sm mx-auto">
           <img src="/support-qr.png" />
           <a
-            href="https://twitter.com/alexwhitedev"
+            href="https://www.buymeacoffee.com/7dxmb2CFj"
             target="_blank"
             class="bg-purple-darker text-white no-underline rounded-full py-3 px-16 flex justify-center items-center font-semibold text-lg"
           >

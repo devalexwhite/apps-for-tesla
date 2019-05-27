@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row rounded-lg shadow-md bg-white px-6 py-6 w-full items-center"
+    class="flex flex-row rounded-lg shadow-md bg-white w-full items-center px-6"
     style="background: rgba(255,255,255,0.5);"
   >
     <svg
@@ -20,7 +20,7 @@
       ></path>
     </svg>
     <input
-      class="font-semibold text-lg"
+      class="font-semibold text-lg w-full h-full py-6"
       placeholder="Search"
       style="color: #555555;background: rgba(255,255,255,0);"
       @input="event => $emit('input', event.target.value)"

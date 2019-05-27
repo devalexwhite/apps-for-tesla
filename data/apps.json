@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "A Better Route Planner",
     "image": "https://abetterrouteplanner.com/icon/abrp_icon.png",
     "href": "https://abetterrouteplanner.com/",
@@ -7,18 +8,21 @@
     "allowIFrame": true
   },
   {
+    "id": 2,
     "title": "TesPlayer - Spotify Remote",
     "href": "https://tesplayer.com",
     "category": "Entertainment",
     "allowIFrame": false
   },
   {
+    "id": 3,
     "title": "Tesla Waze",
     "href": "https://TeslaWaze.azurewebsites.net",
     "category": "Navigation",
     "allowIFrame": true
   },
   {
+    "id": 4,
     "title": "Tesla Weather Radar",
     "image": "/app-logos/tesla-weather-radar.png",
     "href": "https://www.teslaweatherradar.com/",
@@ -26,6 +30,7 @@
     "allowIFrame": false
   },
   {
+    "id": 5,
     "title": "Eve For Tesla",
     "image": "/app-logos/eve-for-tesla.png",
     "href": "https://teslaapps.net/en/",
@@ -33,6 +38,7 @@
     "allowIFrame": true
   },
   {
+    "id": 6,
     "title": "qTesla",
     "href": "https://qtes.la/",
     "category": "Productivity",

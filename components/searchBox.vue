@@ -12,7 +12,7 @@
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      style="color: #555;width: 20px;height: 20px;"
+      style="color: #555555;width: 20px;height: 20px;"
     >
       <path
         fill="currentColor"
@@ -20,7 +20,7 @@
       ></path>
     </svg>
     <input
-      class="font-semibold text-lg w-full h-full py-6"
+      class="font-semibold text-xl w-full h-full py-6"
       placeholder="Search"
       style="color: #555555;background: rgba(255,255,255,0);"
       @input="event => $emit('input', event.target.value)"

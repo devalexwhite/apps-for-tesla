@@ -1,5 +1,9 @@
 <template>
   <div class="max-w-screen max-h-screen overflow-hidden">
+    <result-context-menu
+      :visible="appContextVisible"
+      @close="appContextVisible = false"
+    />
     <app-container
       :visible="appContainerVisible"
       :app="selectedApp"
@@ -25,7 +29,11 @@
         <h3 style="color: #555;" class="text-xl font-semibold mb-8">
           {{ selectedCategory }}
         </h3>
-        <results :apps="filteredApps" @selected="openAppContainer"></results>
+        <results
+          :apps="filteredApps"
+          @long="handleResultLong"
+          @selected="openAppContainer"
+        ></results>
       </section>
     </main>
   </div>
@@ -36,6 +44,7 @@ import Navigation from '../components/navigation'
 import SearchBox from '../components/searchBox'
 import Results from '../components/results'
 import AppContainer from '../components/appContainer'
+import ResultContextMenu from '../components/resultContextMenu'
 import { AppsService } from '../services/appsService'
 import { CategoriesService } from '../services/categoriesService'
 
@@ -44,7 +53,8 @@ export default {
     AppContainer,
     Navigation,
     SearchBox,
-    Results
+    Results,
+    ResultContextMenu
   },
   data: () => ({
     categories: [],
@@ -52,6 +62,7 @@ export default {
     apps: [],
     query: '',
     appContainerVisible: false,
+    appContextVisible: false,
     selectedApp: {}
   }),
   computed: {
@@ -90,6 +101,10 @@ export default {
       } else {
         window.location = app.href
       }
+    },
+    handleResultLong: function(app) {
+      this.selectedApp = app
+      this.appContextVisible = true
     }
   }
 }

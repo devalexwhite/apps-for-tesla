@@ -88,6 +88,11 @@ export default {
   beforeMount() {
     this.apps = AppsService.fetchApps()
     this.categories = CategoriesService.fetchCategories(this.apps)
+    window.oncontextmenu = function(event) {
+      event.preventDefault()
+      event.stopPropagation()
+      return false
+    }
   },
   methods: {
     closeAppContainer: function() {

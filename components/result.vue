@@ -1,7 +1,7 @@
 <template>
   <div
     v-long-press="500"
-    class="cursor-pointer"
+    class="cursor-pointer select-none"
     @long-press-start="$emit('long')"
     @click="$emit('click')"
   >

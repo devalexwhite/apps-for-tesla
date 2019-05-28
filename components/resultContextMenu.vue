@@ -9,7 +9,7 @@
     <ul
       class="list-reset w-2/3 bg-grey-darker rounded-lg shadow-lg px-8 py-6 flex flex-row justify-center"
     >
-      <li class="">
+      <li>
         <svg
           aria-hidden="true"
           focusable="false"
@@ -62,7 +62,7 @@ export default {
 
 <style scoped lang="postcss">
 li {
-  @apply flex flex-col text-white mx-6 justify-center items-center;
+  @apply flex flex-col text-white mx-6 justify-center items-center select-none;
 }
 li > svg {
   @apply mb-2 text-grey-light;
@@ -70,6 +70,6 @@ li > svg {
   height: 60px;
 }
 li > h3 {
-  @apply text-xl font-semibold;
+  @apply text-xl font-semibold select-none;
 }
 </style>

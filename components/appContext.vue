@@ -9,7 +9,7 @@
     >
       <li>
         <button @click="fullscreen">
-          <i class="far fa-compress"></i>
+          <i class="far  fa-compress"></i>
           <span>Fullscreen</span>
         </button>
       </li>

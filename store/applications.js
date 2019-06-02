@@ -81,6 +81,6 @@ export const actions = {
   },
   setInstalled({ commit }) {
     const applications = LocalStorageService.get(StorageKeys.INSTALLED_APPS)
-    commit('setInstalledApplications', applications)
+    commit('setInstalledApplications', applications || [])
   }
 }

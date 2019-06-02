@@ -10,6 +10,13 @@ export class LocalStorageService {
     }
   }
 
+  static pop(key, value) {
+    const existing = this.get(key)
+    if (!existing || !existing.includes(value)) return
+    existing.splice(existing.indexOf(value), 1)
+    this.set(key, existing)
+  }
+
   static set(key, value) {
     const json = JSON.stringify(value)
     localStorage.setItem(key, json)

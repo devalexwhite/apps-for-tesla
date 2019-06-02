@@ -1,9 +1,13 @@
 <template>
   <nav class="h-screen w-full py-8" style="background-color: #FAFAFA;">
     <ul class="list-reset">
-      <li class="nav-item" :active="-1 === activeCategoryId">
+      <li
+        v-if="hasInstalled"
+        class="nav-item"
+        :active="-1 === activeCategoryId"
+      >
         <i class="far fa-save"></i>
-        <button v-if="hasInstalled" @click="setActive(-1)">
+        <button @click="setActive(-1)">
           Installed
         </button>
       </li>

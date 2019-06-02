@@ -2,6 +2,7 @@
   <div class="max-w-screen max-h-screen overflow-hidden">
     <app-info />
     <app-launch />
+    <app-context />
     <main class="flex flex-row min-h-screen" style="background: #EEEEEE;">
       <aside class="max-w-xs w-1/5">
         <section>
@@ -27,6 +28,7 @@ import SearchBox from '../components/searchBox'
 import Results from '../components/results'
 import AppInfo from '../components/appInfo'
 import AppLaunch from '../components/appLaunch'
+import AppContext from '../components/appContext'
 import { AppsService } from '../services/appsService'
 import { CategoriesService } from '../services/categoriesService'
 
@@ -36,7 +38,8 @@ export default {
     SearchBox,
     Results,
     AppInfo,
-    AppLaunch
+    AppLaunch,
+    AppContext
   },
   data: () => ({
     appContainerVisible: false,

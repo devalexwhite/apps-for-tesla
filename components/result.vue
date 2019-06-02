@@ -4,6 +4,7 @@
       v-if="installed"
       class="pin-t pin-r absolute bg-white opacity-75 rounded-full flex flex-col justify-center items-center mt-2 mr-2"
       style="width: 30px;height:30px;"
+      @click.stop="$store.dispatch('appContext/launchContext', app.id)"
     >
       <div class="dot" />
       <div class="dot" />

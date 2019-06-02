@@ -58,6 +58,10 @@ export const mutations = {
       if (state.installed.includes(id)) return
       state.installed.push(id)
     }
+  },
+  removeInstalled(state, id) {
+    if (!state.installed.includes(id)) return
+    state.installed.splice(state.installed.indexOf(id), 1)
   }
 }
 
@@ -67,6 +71,13 @@ export const actions = {
     LocalStorageService.push(StorageKeys.INSTALLED_APPS, id)
     commit('appInfo/setVisible', false, { root: true })
     commit('categories/setActive', -1, { root: true })
+  },
+  uninstallApplication({ commit, state }, id) {
+    const lastApp = state.installed.length === 1
+    commit('removeInstalled', id)
+    LocalStorageService.pop(StorageKeys.INSTALLED_APPS, id)
+    commit('appContext/setVisible', false, { root: true })
+    if (lastApp) commit('categories/setActive', 0, { root: true })
   },
   setInstalled({ commit }) {
     const applications = LocalStorageService.get(StorageKeys.INSTALLED_APPS)

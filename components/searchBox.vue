@@ -23,13 +23,21 @@
       class="font-semibold text-xl w-full h-full py-6"
       placeholder="Search"
       style="color: #555555;background: rgba(255,255,255,0);"
+      :value="value"
       @input="event => $emit('input', event.target.value)"
     />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    value: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style></style>

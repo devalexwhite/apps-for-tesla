@@ -1,19 +1,27 @@
 <template>
   <nav class="h-screen w-full py-8" style="background-color: #FAFAFA;">
     <ul class="list-reset">
-      <li class="nav-item" :active="'All Applications' === selectedCategory">
-        <button @click="$emit('selectCategory', 'All Applications')">
+      <li class="nav-item" :active="-1 === activeCategoryId">
+        <i class="far fa-save"></i>
+        <button v-if="hasInstalled" @click="setActive(-1)">
+          Installed
+        </button>
+      </li>
+      <li class="nav-item" :active="0 === activeCategoryId">
+        <i class="far fa-store"></i>
+        <button @click="setActive(0)">
           All Applications
         </button>
       </li>
       <li
-        v-for="item in categories"
-        :key="item"
+        v-for="category in categories"
+        :key="category.id"
         class="nav-item"
-        :active="item === selectedCategory"
+        :active="category.id === activeCategoryId"
       >
-        <button @click="$emit('selectCategory', item)">
-          {{ item }}
+        <i v-if="category.icon" :class="`far fa-${category.icon}`"></i>
+        <button @click="setActive(category.id)">
+          {{ category.title }}
         </button>
       </li>
     </ul>
@@ -40,16 +48,25 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
-  props: {
-    categories: {
-      default: () => new Set(),
-      type: Set
+  computed: {
+    activeCategoryId() {
+      return this.$store.state.categories.active
     },
-    selectedCategory: {
-      required: true,
-      type: String
+    categories() {
+      return this.$store.state.categories.all
+    },
+    hasInstalled() {
+      return this.$store.getters['applications/hasInstalled']
     }
+  },
+  mounted() {
+    if (this.hasInstalled) this.setActive(-1)
+  },
+  methods: {
+    ...mapMutations({ setActive: 'categories/setActive' })
   }
 }
 </script>
@@ -58,16 +75,23 @@ export default {
 li.nav-item {
   @apply text-lg py-4 px-10 overflow-hidden mb-4;
 }
+li.nav-item > svg {
+  @apply mr-1 text-xl;
+  color: #b8b8b8;
+}
+li[active='true'].nav-item > svg {
+  @apply mr-1 text-blue-darker text-xl;
+}
 li.nav-item[active='true'] {
   background-color: #eee;
 }
 li.nav-item > button,
 li.nav-item > a {
-  @apply font-semibold no-underline;
+  @apply font-semibold no-underline text-left;
   color: #b8b8b8;
 }
 li.nav-item[active='true'] > button,
 li.nav-item[active='true'] > a {
-  @apply text-black text-left leading-normal;
+  @apply text-black leading-normal;
 }
 </style>

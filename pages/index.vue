@@ -1,39 +1,21 @@
 <template>
   <div class="max-w-screen max-h-screen overflow-hidden">
-    <result-context-menu
-      :visible="appContextVisible"
-      @close="appContextVisible = false"
-    />
-    <app-container
-      :visible="appContainerVisible"
-      :app="selectedApp"
-      @close="closeAppContainer"
-    ></app-container>
+    <app-info />
+    <app-launch />
     <main class="flex flex-row min-h-screen" style="background: #EEEEEE;">
       <aside class="max-w-xs w-1/5">
         <section>
-          <navigation
-            :categories="categories"
-            :selected-category="selectedCategory"
-            @selectCategory="category => (selectedCategory = category)"
-          ></navigation>
+          <navigation />
         </section>
       </aside>
       <section class="flex-1 pt-8 px-16 max-h-screen flex flex-col">
         <header class="mb-8">
-          <search-box
-            class="max-w-sm"
-            @input="value => (query = value)"
-          ></search-box>
+          <search-box v-model="query" class="max-w-sm"></search-box>
         </header>
         <h3 style="color: #555;" class="text-xl font-semibold mb-8">
-          {{ selectedCategory }}
+          {{ activeCategory ? activeCategory.title : 'All Applications' }}
         </h3>
-        <results
-          :apps="filteredApps"
-          @long="handleResultLong"
-          @selected="openAppContainer"
-        ></results>
+        <results />
       </section>
     </main>
   </div>
@@ -43,73 +25,49 @@
 import Navigation from '../components/navigation'
 import SearchBox from '../components/searchBox'
 import Results from '../components/results'
-import AppContainer from '../components/appContainer'
-import ResultContextMenu from '../components/resultContextMenu'
+import AppInfo from '../components/appInfo'
+import AppLaunch from '../components/appLaunch'
 import { AppsService } from '../services/appsService'
 import { CategoriesService } from '../services/categoriesService'
 
 export default {
   components: {
-    AppContainer,
     Navigation,
     SearchBox,
     Results,
-    ResultContextMenu
+    AppInfo,
+    AppLaunch
   },
   data: () => ({
-    categories: [],
-    selectedCategory: 'All Applications',
-    apps: [],
-    query: '',
     appContainerVisible: false,
     appContextVisible: false,
     selectedApp: {}
   }),
   computed: {
-    filteredApps: function() {
-      return this.apps.filter(app => {
-        if (this.selectedCategory !== 'All Applications') {
-          if (app.category !== this.selectedCategory) return false
-        }
-        if (this.query) {
-          // eslint-disable-next-line no-console
-          console.log(
-            app.title.toLowerCase().indexOf(this.query.trim().toLowerCase())
-          )
-          return (
-            app.title.toLowerCase().indexOf(this.query.trim().toLowerCase()) !==
-            -1
-          )
-        }
-        return true
-      })
+    activeCategory() {
+      return this.$store.getters['categories/active']
+    },
+    query: {
+      get() {
+        return this.$store.state.searchQuery
+      },
+      set(value) {
+        this.$store.commit('setSearchQuery', value)
+      }
     }
   },
+  fetch({ store }) {
+    const categories = CategoriesService.fetchCategories()
+    const apps = AppsService.fetchApps()
+    store.commit('applications/setApplications', apps)
+    store.commit('categories/setCategories', categories)
+    store.dispatch('applications/setInstalled')
+  },
   beforeMount() {
-    this.apps = AppsService.fetchApps()
-    this.categories = CategoriesService.fetchCategories(this.apps)
     window.oncontextmenu = function(event) {
       event.preventDefault()
       event.stopPropagation()
       return false
-    }
-  },
-  methods: {
-    closeAppContainer: function() {
-      this.appContainerVisible = false
-      this.selectedApp = {}
-    },
-    openAppContainer: function(app) {
-      if (app.allowIFrame) {
-        this.selectedApp = app
-        this.appContainerVisible = true
-      } else {
-        window.location = app.href
-      }
-    },
-    handleResultLong: function(app) {
-      this.selectedApp = app
-      this.appContextVisible = true
     }
   }
 }

@@ -1,9 +1,7 @@
+import categories from '../data/categories.json'
+
 export class CategoriesService {
-  static fetchCategories(apps = []) {
-    const categories = new Set()
-    apps.forEach(app => {
-      categories.add(app.category)
-    })
+  static fetchCategories() {
     return categories
   }
 }

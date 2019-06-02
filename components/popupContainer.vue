@@ -13,7 +13,10 @@
           @click="$emit('close')"
         ></div>
       </header>
-      <iframe v-if="visible" :src="app.href" class="w-full flex-1"></iframe>
+      <div class="w-full flex-1">
+        <slot />
+      </div>
+      <!-- <iframe v-if="visible" :src="app.href" class="w-full flex-1"></iframe> -->
     </section>
   </div>
 </template>

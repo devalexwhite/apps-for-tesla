@@ -1,26 +1,30 @@
 <template>
-  <div
-    v-long-press="500"
-    class="cursor-pointer select-none"
-    @long-press-start="$emit('long')"
-    @click="$emit('click')"
-  >
+  <div class="cursor-pointer select-none relative" @click="$emit('click')">
+    <div
+      v-if="installed"
+      class="pin-t pin-r absolute bg-white opacity-75 rounded-full flex flex-col justify-center items-center mt-2 mr-2"
+      style="width: 30px;height:30px;"
+    >
+      <div class="dot" />
+      <div class="dot" />
+      <div class="dot" />
+    </div>
     <div
       class="shadow-lg mb-6 flex justify-center items-center text-center font-bold tracking-wide overflow-hidden"
       style="width: 200px; height: 200px; font-size: 80px; color: #555555;background-color: #8EC5FC;background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);"
     >
       <div
-        v-if="image"
+        v-if="app.image"
         class="bg-center bg-cover w-full h-full"
-        :style="`background-image: url('${image}');`"
+        :style="`background-image: url('${app.image}');`"
       ></div>
-      <div v-if="!image">
-        {{ initials(title) }}
+      <div v-if="!app.image">
+        {{ initials(app.title) }}
       </div>
     </div>
 
     <h3 class="text-black font-semibold text-lg font-normal leading-normal">
-      {{ title }}
+      {{ app.title }}
     </h3>
   </div>
 </template>
@@ -28,21 +32,19 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      required: true
+    id: {
+      type: Number,
+      default: 0
+    }
+  },
+  computed: {
+    app() {
+      return this.$store.state.applications.all.find(
+        app => app.id === this.$props.id
+      )
     },
-    href: {
-      type: String,
-      required: true
-    },
-    allowIFrame: {
-      type: Boolean,
-      default: true
-    },
-    image: {
-      type: String,
-      default: undefined
+    installed() {
+      return this.$store.state.applications.installed.includes(this.$props.id)
     }
   },
   methods: {
@@ -57,4 +59,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="postcss">
+.dot {
+  @apply rounded-full bg-grey-darker;
+  margin-bottom: 2px;
+  width: 4px;
+  height: 4px;
+}
+</style>

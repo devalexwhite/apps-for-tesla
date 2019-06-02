@@ -2,46 +2,65 @@
   {
     "id": 1,
     "title": "A Better Route Planner",
+    "description": "A Better Routeplanner (ABRP) for planning trips and charging with an Electric Vehicle - both home and in-car.",
     "image": "https://abetterrouteplanner.com/icon/abrp_icon.png",
     "href": "https://abetterrouteplanner.com/",
-    "category": "Navigation",
-    "allowIFrame": true
+    "categories": [1],
+    "allowIFrame": true,
+    "upvotes": 102,
+    "downvotes": 20
   },
   {
     "id": 2,
     "title": "TesPlayer - Spotify Remote",
+    "description": "Control Spotify with this web remote.",
     "href": "https://tesplayer.com",
-    "category": "Entertainment",
-    "allowIFrame": false
+    "categories": [2],
+    "allowIFrame": false,
+    "upvotes": 102,
+    "downvotes": 20
   },
   {
     "id": 3,
     "title": "Tesla Waze",
+    "description": "View traffic incidents around you using Waze.",
     "href": "https://TeslaWaze.azurewebsites.net",
     "category": "Navigation",
-    "allowIFrame": true
+    "categories": [1],
+    "allowIFrame": true,
+    "upvotes": 102,
+    "downvotes": 20
   },
   {
     "id": 4,
     "title": "Tesla Weather Radar",
+    "description": "A weather radar for your Tesla.",
     "image": "/app-logos/tesla-weather-radar.png",
     "href": "https://www.teslaweatherradar.com/",
-    "category": "Weather",
-    "allowIFrame": false
+    "categories": [3],
+    "allowIFrame": false,
+    "upvotes": 102,
+    "downvotes": 20
   },
   {
     "id": 5,
     "title": "Eve For Tesla",
+    "description": "EVE For Tesla is designed from the ground up to create a premier dashboard experience specific to your Tesla Model S vehicle touchscreen.",
     "image": "/app-logos/eve-for-tesla.png",
     "href": "https://teslaapps.net/en/",
-    "category": "Productivity",
-    "allowIFrame": true
+    "categories": [4],
+    "allowIFrame": true,
+    "upvotes": 102,
+    "downvotes": 20
   },
   {
     "id": 6,
     "title": "qTesla",
+    "description": "qTesla Free Supercharging. Forecast Radar Waze News Stock.",
     "href": "https://qtes.la/",
-    "category": "Productivity",
-    "allowIFrame": true
+    "categories": [4],
+    "allowIFrame": true,
+    "upvotes": 102,
+    "downvotes": 20
   }
 ]

@@ -17,7 +17,15 @@ export default {
         content: 'Unofficial app store for Tesla Vehicles'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://pro.fontawesome.com/releases/v5.8.2/js/all.js',
+        integrity:
+          'sha384-RLPiEwcAdrH2NjFcwJipJtlFoIN1xvqPYeeDX5yYtSNu+HTIkQCDvPQ9thsUnPUS',
+        crossorigin: 'anonymous'
+      }
+    ]
   },
 
   /*

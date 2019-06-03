@@ -4,7 +4,7 @@
     <app-launch />
     <app-context />
     <main class="flex flex-row min-h-screen" style="background: #EEEEEE;">
-      <aside class="max-w-xs w-1/5">
+      <aside class="max-w-xs w-1/4">
         <section>
           <navigation />
         </section>

@@ -52,7 +52,7 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-column-gap: 40px;
   grid-template-rows: max-content;
   grid-row-gap: 60px;

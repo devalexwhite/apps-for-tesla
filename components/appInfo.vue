@@ -18,12 +18,12 @@
         >
           Install
         </button>
-        <button class="mr-8 font-semibold text-blue-darker">
+        <!-- <button class="mr-8 font-semibold text-blue-darker">
           👍 {{ upvotePercent }}%
         </button>
         <button class="mr-8 font-semibold text-blue-darker">
           👎 {{ downvotePercent }}%
-        </button>
+        </button> -->
       </div>
       <p
         class="text-xl tracking-normal max-w-lg font-normal text-grey-darker leading-normal"

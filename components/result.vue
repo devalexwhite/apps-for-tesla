@@ -2,8 +2,8 @@
   <div class="cursor-pointer select-none relative" @click="$emit('click')">
     <div
       v-if="installed"
-      class="pin-t pin-r absolute bg-white opacity-75 rounded-full flex flex-col justify-center items-center mt-2 mr-2"
-      style="width: 30px;height:30px;"
+      class="pin-t pin-r absolute bg-white rounded-full flex flex-col justify-center items-center mt-2 mr-2"
+      style="width: 40px;height:40px;"
       @click.stop="$store.dispatch('appContext/launchContext', app.id)"
     >
       <div class="dot" />
@@ -12,7 +12,7 @@
     </div>
     <div
       class="shadow-lg mb-6 flex justify-center items-center text-center font-bold tracking-wide overflow-hidden"
-      style="width: 200px; height: 200px; font-size: 80px; color: #555555;background-color: #8EC5FC;background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);"
+      style="width: 100%; height: 250px; font-size: 80px; color: #555555;background-color: #8EC5FC;background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);"
     >
       <div
         v-if="app.image"
@@ -64,7 +64,7 @@ export default {
 .dot {
   @apply rounded-full bg-grey-darker;
   margin-bottom: 2px;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 }
 </style>

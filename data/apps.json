@@ -24,7 +24,7 @@
     "id": 3,
     "title": "Tesla Waze",
     "description": "View traffic incidents around you using Waze.",
-    "href": "https://TeslaWaze.azurewebsites.net",
+    "href": "https://teslawaze.azurewebsites.net",
     "category": "Navigation",
     "categories": [1],
     "allowIFrame": true,

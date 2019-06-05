@@ -136,7 +136,7 @@ export default {
         header: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }
       await this.$axios.post(
-        '/',
+        'https://appsfortesla.co/',
         this.encode({
           'form-name': 'suggest-app',
           ...this.form

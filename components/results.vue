@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="overflow-y-auto mb-12">
     <ul
       v-if="apps.length"
-      class="list-reset grid overflow-x-hidden overflow-y-auto h-full"
+      class="list-reset grid overflow-x-hidden overflow-y-auto"
     >
       <li v-for="app in apps" :key="app.id">
         <result v-bind="app" @click="selectApp(app.id)" />

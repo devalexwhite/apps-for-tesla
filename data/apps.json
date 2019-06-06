@@ -84,5 +84,37 @@
     "allowIFrame": false,
     "upvotes": 102,
     "downvotes": 20
+  },
+  {
+    "id": 9,
+    "title": "Tesla Screens",
+    "description": "Fun Tesla screens developed by Kinetic.",
+    "image": "/app-logos/tesla-screens.png",
+    "href": "http://www.kinetic.com/teslascreens/",
+    "categories": [2],
+    "allowIFrame": false,
+    "upvotes": 102,
+    "downvotes": 20
+  },
+  {
+    "id": 10,
+    "title": "EV Radar",
+    "description": "Radar Alerts is a web app for your Tesla Model S or Tesla Model X that keeps you informed of speed traps and other incidents around you. The app has been specifically engineered to perform well in the Tesla web browser.",
+    "image": "/app-logos/ev-radar.png",
+    "href": "http://ev-radar.com/",
+    "categories": [1],
+    "allowIFrame": false,
+    "upvotes": 102,
+    "downvotes": 20
+  },
+  {
+    "id": 11,
+    "title": "Car Show Digital Poster",
+    "description": "Informational display to show during carshows, created by Tesla Time.",
+    "href": "http://teslatime.xyz/carshowusa/",
+    "categories": [2],
+    "allowIFrame": false,
+    "upvotes": 102,
+    "downvotes": 20
   }
 ]

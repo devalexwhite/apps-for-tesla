@@ -22,7 +22,7 @@ export default {
       {
         src: 'https://pro.fontawesome.com/releases/v5.8.2/js/all.js',
         integrity:
-          'sha384-vlOMx0hKjUCl4WzuhIhSNZSm2yQCaf0mOU1hEDK/iztH3gU4v5NMmJln9273A6Jz',
+          'sha384-nKdXFHC25mX+ztWymakpQ8nRykznAcZ+yHi9XETJ8CuVvvSGeg/0QCPhvDb41hUb',
         crossorigin: 'anonymous'
       }
     ]

@@ -20,7 +20,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
-        src: 'https://pro.fontawesome.com/releases/v5.8.2/js/all.js',
+        src: 'https://pro.fontawesome.com/releases/v5.9.0/js/all.js',
         integrity:
           'sha384-nKdXFHC25mX+ztWymakpQ8nRykznAcZ+yHi9XETJ8CuVvvSGeg/0QCPhvDb41hUb',
         crossorigin: 'anonymous'

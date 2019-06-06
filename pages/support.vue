@@ -17,11 +17,20 @@
         </ul>
       </nav>
     </header>
-    <section class="flex flex-col justify-center items-center flex-1">
+    <section
+      class="flex flex-col justify-center items-center flex-1 overflow-y-auto"
+    >
       <article
-        class="flex flex-col justify-center bg-white w-1/4 py-8 rounded-lg"
+        class="flex flex-col justify-center bg-white w-1/2 py-8 rounded-lg"
       >
-        <div class="max-w-sm mx-auto">
+        <div class="max-w-sm mx-auto px-12 flex flex-col items-center">
+          <img src="/doggo.jpg" class="rounded-full" width="200" height="200" />
+          <p
+            class="text-2xl my-8 leading-normal text-black font-normal text-center"
+          >
+            Your support helps me put more Christmas lights on my dog (and
+            continue supporting this website)!
+          </p>
           <img src="/support-qr.png" />
           <a
             href="https://www.buymeacoffee.com/7dxmb2CFj"

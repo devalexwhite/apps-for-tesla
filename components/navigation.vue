@@ -1,18 +1,22 @@
 <template>
-  <nav class="h-screen w-full py-8" style="background-color: #FAFAFA;">
+  <nav
+    class="h-screen w-full relative pt-12 overflow-y-auto"
+    style="background-color: #FAFAFA;"
+  >
+    <h3 class="text-3xl mb-12 text-black font-bold px-10">Applications</h3>
     <ul class="list-reset">
       <li
         v-if="hasInstalled"
         class="nav-item"
         :active="-1 === activeCategoryId"
       >
-        <i class="far fa-save"></i>
+        <i class="fas fa-car"></i>
         <button @click="setActive(-1)">
           Installed
         </button>
       </li>
       <li class="nav-item" :active="0 === activeCategoryId">
-        <i class="far fa-store"></i>
+        <i class="fas fa-store"></i>
         <button @click="setActive(0)">
           All Applications
         </button>
@@ -23,7 +27,7 @@
         class="nav-item"
         :active="category.id === activeCategoryId"
       >
-        <i v-if="category.icon" :class="`far fa-${category.icon}`"></i>
+        <i v-if="category.icon" :class="`fas fa-${category.icon}`"></i>
         <button @click="setActive(category.id)">
           {{ category.title }}
         </button>
@@ -31,7 +35,7 @@
     </ul>
     <div
       class="mx-10 rounded-lg mb-4"
-      style="height: 2px;background: #B8B8B8;"
+      style="height: 2px;background: #a5a5a5;"
     ></div>
     <ul class="list-reset">
       <li class="nav-item"><nuxt-link to="/submit">Submit App</nuxt-link></li>
@@ -39,12 +43,13 @@
     </ul>
     <div
       class="mx-10 rounded-lg mb-4"
-      style="height: 2px;background: #B8B8B8;"
+      style="height: 2px;background: #a5a5a5;"
     ></div>
     <ul class="list-reset">
       <li class="nav-item">
         <nuxt-link to="/support">
-          Support the Developer
+          <i class="fas fa-coffee"></i>
+          Support the Dev
         </nuxt-link>
       </li>
     </ul>
@@ -77,25 +82,26 @@ export default {
 
 <style lang="postcss">
 li.nav-item {
-  @apply text-lg py-4 px-10 overflow-hidden mb-4;
+  @apply text-2xl py-2 px-10 overflow-hidden mb-6 flex flex-row items-center;
 }
-li.nav-item > svg {
-  @apply mr-1 text-xl;
-  color: #b8b8b8;
+li.nav-item svg {
+  @apply mr-4 text-3xl;
+  width: 40px;
+  color: #a5a5a5;
 }
-li[active='true'].nav-item > svg {
-  @apply mr-1 text-blue-darker text-xl;
+li[active='true'].nav-item svg {
+  @apply text-black;
 }
 li.nav-item[active='true'] {
   background-color: #eee;
 }
 li.nav-item > button,
 li.nav-item > a {
-  @apply font-semibold no-underline text-left;
-  color: #b8b8b8;
+  @apply font-normal no-underline text-left;
+  color: #a5a5a5;
 }
 li.nav-item[active='true'] > button,
 li.nav-item[active='true'] > a {
-  @apply text-black leading-normal;
+  @apply text-black;
 }
 </style>

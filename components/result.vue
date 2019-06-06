@@ -11,8 +11,8 @@
       <div class="dot" />
     </div>
     <div
-      class="shadow-lg mb-6 flex justify-center items-center text-center font-bold tracking-wide overflow-hidden"
-      style="width: 100%; height: 250px; font-size: 80px; color: #555555;background-color: #8EC5FC;background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);"
+      class="big-shadow mb-6 flex justify-center items-center text-center font-bold tracking-wide overflow-hidden"
+      style="width: 100%; height: 170px; font-size: 80px; color: #555555;background-color: #8EC5FC;background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);"
     >
       <div
         v-if="app.image"
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <h3 class="text-black font-semibold text-lg font-normal leading-normal">
+    <h3 class="text-black font-semibold text-md font-normal leading-normal">
       {{ app.title }}
     </h3>
   </div>
@@ -66,5 +66,8 @@ export default {
   margin-bottom: 2px;
   width: 6px;
   height: 6px;
+}
+.big-shadow {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="overflow-y-auto mb-12">
+  <div class="overflow-y-auto w-full">
     <ul
       v-if="apps.length"
-      class="list-reset grid overflow-x-hidden overflow-y-auto"
+      class="list-reset grid overflow-x-visible overflow-y-auto px-10 mb-12"
     >
       <li v-for="app in apps" :key="app.id">
         <result v-bind="app" @click="selectApp(app.id)" />
@@ -52,7 +52,7 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, 170px);
   grid-column-gap: 40px;
   grid-template-rows: max-content;
   grid-row-gap: 60px;

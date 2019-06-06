@@ -4,13 +4,13 @@
     <app-launch />
     <app-context />
     <main class="flex flex-row min-h-screen" style="background: #EEEEEE;">
-      <aside style="min-width: 350px;">
+      <aside style="min-width: 330px;">
         <section>
           <navigation />
         </section>
       </aside>
-      <section class="flex-1 pt-8 px-16 max-h-screen flex flex-col">
-        <header class="mb-8">
+      <section class="flex-1 pt-8 max-h-screen flex flex-col">
+        <header class="mb-8 px-10">
           <search-box v-model="query" class="max-w-sm"></search-box>
         </header>
         <h3 style="color: #555;" class="text-xl font-semibold mb-8">
@@ -76,4 +76,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+*:focus {
+  outline: none !important;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+</style>

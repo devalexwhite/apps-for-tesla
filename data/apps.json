@@ -36,7 +36,7 @@
     "title": "Tesla Weather Radar",
     "description": "A weather radar for your Tesla.",
     "image": "/app-logos/tesla-weather-radar.png",
-    "href": "https://www.teslaweatherradar.com/",
+    "href": "http://teslaweatherradar.com/",
     "categories": [3],
     "allowIFrame": false,
     "upvotes": 102,
@@ -48,7 +48,7 @@
     "description": "EVE For Tesla is designed from the ground up to create a premier dashboard experience specific to your Tesla Model S vehicle touchscreen.",
     "image": "/app-logos/eve-for-tesla.png",
     "href": "https://teslaapps.net/en/",
-    "categories": [4],
+    "categories": [4,5],
     "allowIFrame": true,
     "upvotes": 102,
     "downvotes": 20
@@ -58,8 +58,30 @@
     "title": "qTesla",
     "description": "qTesla Free Supercharging. Forecast Radar Waze News Stock.",
     "href": "https://qtes.la/",
-    "categories": [4],
+    "categories": [3,4,5],
     "allowIFrame": true,
+    "upvotes": 102,
+    "downvotes": 20
+  },
+  {
+    "id": 7,
+    "title": "Tesla Winds & Elevation",
+    "description": "Tesla Winds and Elevation is a browser application for the Tesla Model S and Model X that can show your course, ground speed, wind direction, crosswind, headwind/tailwind, elevation, climb/descend rates and grade.",
+    "image": "/app-logos/tesla-winds.png",
+    "href": "https://teslawinds.com",
+    "categories": [1],
+    "allowIFrame": false,
+    "upvotes": 102,
+    "downvotes": 20
+  },
+  {
+    "id": 8,
+    "title": "Tesla Page Portal",
+    "description": "A portal developed specially for the Tesla Car Browser.",
+    "image": "/app-logos/tesla-page.png",
+    "href": "https://teslapage.com",
+    "categories": [3,4,5],
+    "allowIFrame": false,
     "upvotes": 102,
     "downvotes": 20
   }

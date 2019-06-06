@@ -18,5 +18,10 @@
     "id": 4,
     "title": "Productivity",
     "icon": "pencil-ruler"
+  },
+  {
+    "id": 5,
+    "title": "News",
+    "icon": "newspaper"
   }
 ]

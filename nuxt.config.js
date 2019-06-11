@@ -12,9 +12,57 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'twitter:title',
+        content: 'Apps For Tesla'
+      },
+      {
+        name: 'twitter:description',
+        content: 'Unofficial app store for Tesla Vehicles'
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://appsfortesla.co/meta-image.png'
+      },
+      {
         hid: 'description',
         name: 'description',
         content: 'Unofficial app store for Tesla Vehicles'
+      },
+      {
+        itemprop: 'name',
+        content: 'Apps For Tesla'
+      },
+      {
+        itemprop: 'description',
+        content: 'Unofficial app store for Tesla Vehicles'
+      },
+      {
+        itemprop: 'image',
+        content: 'https://appsfortesla.co/meta-image.png'
+      },
+      {
+        property: 'og:url',
+        content: 'https://appsfortesla.co'
+      },
+      {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        property: 'og:title',
+        content: 'Apps For Tesla'
+      },
+      {
+        property: 'og:description',
+        content: 'Unofficial app store for Tesla Vehicles'
+      },
+      {
+        property: 'og:image',
+        content: 'https://appsfortesla.co/meta-image.png'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
